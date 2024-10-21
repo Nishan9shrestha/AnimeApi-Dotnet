@@ -1,10 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace AnimeShowApi.Data
 {
-    public class AnimeDbContext : DbContext
+    public class AnimeDbContext : IdentityDbContext<IdentityUser>
     {
-        public AnimeDbContext(DbContextOptions<AnimeDbContext> options) : base(options)
+        public AnimeDbContext(DbContextOptions options) : base(options)
         {
         }
 
